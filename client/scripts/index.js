@@ -49,12 +49,13 @@ class App extends React.Component {
 		fetch('/api/logout', {
 			method: 'GET',
 			credentials: 'include',
-		})
-			.then(() => {
+		}).then(() => {
+				console.log(this)
 				this.setState({
 					loggedIn: false,
 					user: null,
 				});
+				this.context.history.push(`/`);
 			});
 	}
 
@@ -86,7 +87,6 @@ class App extends React.Component {
 							<Route path='/products/:id' component={ProductEdit} />
 							<Route exact path='/season' component={SeasonSelect} />
 							<Route exact path={`/season/create`} component={SeasonCreate} />
-
 							<Route exact path={`/season/:id`} component={SeasonDetail} />
 							<Route exact path={`/season/:id/game/create`} component={gameCreate} />
 							<Route exact path={`/game/:gameid`} component={gameEdit} />

@@ -8,7 +8,7 @@ class Login extends React.Component {
 			Email: "",
 			Password: ""
 		}
-		error = ''
+		this.error = ''
 		this.loginUser = this.loginUser.bind(this)
 		this.updateField = this.updateField.bind(this)
 	}
@@ -27,14 +27,12 @@ class Login extends React.Component {
 		})
 			.then((res) => {
 				// 3. If the user is valid, log them in                   
-				if (res.status !== 401) {
+				if (res.status !== 400) {
 					this.props.refresh()
 					this.props.history.push('/season'); this.props.history.push('/season');
 				} else {
-console.log('hello')
 					this.error = 'There was a problem with your credentials. Please try again.'
-					// 4. If the user is invalid, let them know and give them another shot to try again. another shot to try again.                            
-					return
+					this.forceUpdate()
 				}
 			})
 	}
@@ -55,6 +53,7 @@ console.log('hello')
 					<label>password</label>
 					<input name="Password" value={this.state.Password} type="password" />
 				</div>
+				{this.error != '' && <div className="error-msg">{this.error}</div> }
 				<button onClick={this.loginUser} className="btn btn-primary">Log In</button>
 			</div>
 			<Link to={'/login/create'}>Sign up</Link>
