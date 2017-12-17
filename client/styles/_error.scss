@@ -1,0 +1,13 @@
+	input[type=text],
+	input[type=password],
+	input[type=date],
+	input[type=email],
+	input[type=number] {
+		&.error {
+			border: 1px solid red;
+		}
+}
+
+.error-msg {
+	color: red;
+}

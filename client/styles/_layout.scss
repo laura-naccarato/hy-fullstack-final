@@ -1,0 +1,45 @@
+.siderbar {
+	height: 100vh;
+	    display: flex;
+	flex-direction: column;
+	
+	ul {
+		flex-grow: 1;
+	}
+}
+
+.inventory-app {
+	display: flex;
+}
+
+.content {
+	flex: 1;
+}
+
+.sidebar, .content {
+	padding: 20px;
+}
+
+.form-input {
+	margin: 10px 0;
+	font-size: rem(16);
+	input {
+		border: 1px solid grey;
+		padding: 5px;
+		width: 50%;
+		border-radius: 3px;
+	}
+	input[type=text],
+	input[type=password],
+	input[type=date],
+	input[type=email],
+	input[type=number] {
+		display: block;
+	}
+
+	label {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+}

@@ -1,0 +1,15 @@
+.action-row {
+	display: flex;
+	padding: 5px;
+
+	.actions {
+		flex: 1;
+	}
+	.discontinued {
+		display: flex;
+		align-items: center;
+		label {
+			margin-left: 7px;
+		}
+	}
+}
