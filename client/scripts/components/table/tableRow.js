@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 const TableRow = (props) => {
-	console.log(props.model)
 	return (
 		<tr>
 			{props.headers.map((header, idx) => {

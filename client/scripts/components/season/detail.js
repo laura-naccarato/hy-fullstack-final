@@ -29,13 +29,12 @@ class SeasonDetail extends React.Component {
 
 	render() {
 		return <div className="season-detail">
-			<h3>{this.state.Title}</h3>
-			<p>Start Date:</p>
-			{this.state.StartDate}
-			<p>End Date:</p>
-			{this.state.EndDate}
+			<h3>Season: {this.state.Title}</h3>
+			<p><strong>Start Date:</strong> {this.state.StartDate}</p>
+			<p><strong>End Date:</strong> {this.state.EndDate}</p>
+			
 			<Link to={`/season/${this.state._id}/game/create`}>
-				<button className="btn btn-default">Add Game</button>
+				<button className="btn btn-primary">Add Game</button>
 			</Link>
 			{this.state.Games.length > 0 &&
 				<div className="games-list">

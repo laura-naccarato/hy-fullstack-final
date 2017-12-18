@@ -53,7 +53,7 @@ class UserCreate extends React.Component {
 	}
 
 	render() {
-		return <div className="game-create">
+		return <div className="home">
 			<div className="form-input">
 				<label>Name:</label>
 				<input name="Name" className={typeof this.state.errors["Name"] !== 'undefined' ? "error" : ''} onChange={this.updateField} type="text" value={this.state.Name} />
@@ -66,7 +66,11 @@ class UserCreate extends React.Component {
 				<label>Passowrd:</label>
 				<input name="Password" className={typeof this.state.errors["Password"] !== 'undefined' ? "error" : ''} onChange={this.updateField} type="password" value={this.state.Password} />
 			</div>
-			<button className="btn btn-primary" onClick={this.createUser}>Create</button>
+			<div className="actions">
+				<div className="login">
+					<button className="btn btn-primary" onClick={this.createUser}>Create</button>
+				</div>
+			</div>
 		</div>
 
 	}

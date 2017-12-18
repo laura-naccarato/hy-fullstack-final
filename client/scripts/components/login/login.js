@@ -43,7 +43,8 @@ class Login extends React.Component {
 	}
 
 	render() {
-		return <div>
+		return <div className='home'>
+			<h1>Toronto Roller Derby Inventory</h1>
 			<div className="login">
 				<div onChange={this.updateField} className="form-input">
 					<label>Email Address</label>
@@ -53,10 +54,16 @@ class Login extends React.Component {
 					<label>password</label>
 					<input name="Password" value={this.state.Password} type="password" />
 				</div>
-				{this.error != '' && <div className="error-msg">{this.error}</div> }
-				<button onClick={this.loginUser} className="btn btn-primary">Log In</button>
+				{this.error != '' && <div className="error-msg">{this.error}</div>}
+				<div className="actions">
+					<div>
+						<Link to={'/login/create'}>Sign up</Link>
+					</div>
+					<div className="login">
+						<button onClick={this.loginUser} className="btn btn-primary">Log In</button>
+					</div>
+				</div>
 			</div>
-			<Link to={'/login/create'}>Sign up</Link>
 		</div>
 	}
 }

@@ -50,12 +50,10 @@ class App extends React.Component {
 			method: 'GET',
 			credentials: 'include',
 		}).then(() => {
-				console.log(this)
 				this.setState({
 					loggedIn: false,
 					user: null,
 				});
-				this.context.history.push(`/`);
 			});
 	}
 
